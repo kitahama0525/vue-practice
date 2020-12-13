@@ -4,8 +4,76 @@ block locals
   - var title = 'Hello Pug!';
 
 block content
-  h1 Hello Pug.
-  div#react-root
-  .main-image
-    img.icon(src="../images/icon.png")
+  style.
+    .error {
+      color: red;
+    }
+    .success {
+      color: green;
+    }
+    .v-enter-active {
+      transition: opacity 1s;
+    }
+    .v-enter {
+      opacity: 0;
+    }
+    .v-enter-to {
+      opacity: 1;
+    }
+    .c-frame h1 {
+      padding-left: 5rem;
+    }
+    #app {
+      padding: 5rem;
+    }
+    #app input {
+      padding: 1rem;
+      font-size: 16px;
+    }
+    #app span {
+      font-size: 18px;
+    }
+  .c-frame
+    h1.c-frame__title Vue練習
+    .c-frame__inner
+      #app
+        //- transition（v-enter, v-enter-to, v-enter-active）
+        //- transition(appear)
+        //-   p(:class="error_class") {{ message }}
+        //- transition(appear)
+        //-   div(v-html="message")
 
+        //- v-model
+        //- input(type="number" v-model="number")
+        //- p = {{ number }}
+
+        //- v-if
+        //- p.alert(v-if="out_service") 現在は営業時間外です
+
+        //- v-for v-bind:key
+        //- ul(v-for="i of 365" :key="i")
+        //-   li {{ i }}
+
+        //- v-for dataの中から
+        //- ul(v-for="week of weeks" :key="week")
+        //-   li {{ week }}
+
+        //- v-on methods
+        //- button(v-on:click="checkClick" :disabled="clicked") 決済する
+
+        //- Vue.component
+        //- date
+        //- date
+
+        //- slot
+        //- clock
+        //- clock(style="color: blue") 現在時刻
+
+        //- mixin
+        //- p {{ number }}
+
+        input(type="number" name="num1" v-model.number="num1")
+        |  +
+        input(type="number" name="num2" v-model.number="num2")
+        |  =
+        span(v-if="done")  {{ answer }}
